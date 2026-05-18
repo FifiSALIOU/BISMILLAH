@@ -1,0 +1,347 @@
+# =============================================================================
+# .dockerignore - RAG Ultra Performant Multimodal API
+# Fichiers et dossiers à ignorer lors du build Docker
+# =============================================================================
+
+# =============================================================================
+# ENVIRONNEMENTS VIRTUELS PYTHON
+# =============================================================================
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+.virtualenv/
+.conda/
+conda-meta/
+Pipfile.lock
+
+# =============================================================================
+# CACHE ET ARTEFACTS PYTHON
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+*.spec
+.pyc
+.pyo
+.pyd
+PYTHONPATH
+
+# =============================================================================
+# ENVIRONNEMENTS DE DÉVELOPPEMENT (IDEs)
+# =============================================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+.spyderproject
+.spyproject
+.ropeproject
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# =============================================================================
+# SYSTÈMES D'EXPLOITATION
+# =============================================================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# CONTRÔLE DE VERSION
+# =============================================================================
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+.svn/
+.hg/
+.bzr/
+CVS/
+
+# =============================================================================
+# DOCKER ET CONTENEURISATION
+# =============================================================================
+Dockerfile*
+docker-compose*
+.dockerignore
+.docker/
+docker-data/
+.hadolint.yaml
+
+# =============================================================================
+# DOCUMENTATION ET MÉTADONNÉES
+# =============================================================================
+*.md
+README*
+LICENSE*
+CHANGELOG*
+CONTRIBUTING*
+AUTHORS*
+MAINTAINERS*
+docs/
+documentation/
+.readthedocs.yml
+
+# =============================================================================
+# TESTS ET QUALITÉ DE CODE
+# =============================================================================
+tests/
+test_*.py
+*_test.py
+*_tests.py
+pytest.ini
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.bandit
+.flake8
+.pylintrc
+pyproject.toml
+setup.cfg
+
+# =============================================================================
+# LOGS ET MONITORING
+# =============================================================================
+logs/
+*.log
+*.log.*
+log/
+.logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =============================================================================
+# DONNÉES TEMPORAIRES ET CACHE
+# =============================================================================
+temp/
+tmp/
+*.tmp
+*.temp
+.tmp/
+.temp/
+*.swp
+*.swo
+.cache/
+.parcel-cache/
+
+# =============================================================================
+# MODÈLES ET DONNÉES IA (seront téléchargés dans le conteneur)
+# =============================================================================
+#models/
+.cache/
+.huggingface/
+.transformers_cache/
+.sentence_transformers/
+.torch/
+.keras/
+.tensorflow/
+embeddings/
+checkpoints/
+*.bin
+*.safetensors
+*.onnx
+*.pkl
+*.joblib
+
+# =============================================================================
+# BASES DE DONNÉES LOCALES (seront créées dans le conteneur)
+# =============================================================================
+ultra_rag_db/
+*.db
+*.sqlite*
+*.db-journal
+*.db-wal
+*.db-shm
+data/
+database/
+db/
+
+# =============================================================================
+# CONFIGURATION ET SECRETS
+# =============================================================================
+#.env
+#.env.*
+!.env.example
+.envrc
+.secrets
+secrets/
+config.local.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+
+# =============================================================================
+# SCRIPTS DE DÉVELOPPEMENT ET DÉPLOIEMENT
+# =============================================================================
+test_*.py
+create_test_*.py
+debug_*.py
+exemple_*.py
+*.ps1
+*.sh
+*.bat
+*.cmd
+scripts/
+deploy/
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+Jenkinsfile
+azure-pipelines.yml
+
+# =============================================================================
+# MONITORING ET OBSERVABILITÉ (sera configuré séparément)
+# =============================================================================
+monitoring/
+grafana/
+prometheus/
+loki/
+jaeger/
+zipkin/
+metrics/
+
+# =============================================================================
+# DONNÉES UTILISATEUR ET UPLOADS
+# =============================================================================
+uploads/
+user-data/
+attachments/
+media/
+static/media/
+multimodal-documents/
+for-analysis/
+
+# =============================================================================
+# SAUVEGARDE ET ARCHIVAGE
+# =============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+backup/
+backups/
+archive/
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+*.rar
+*.7z
+
+# =============================================================================
+# DÉPENDANCES ET PACKAGES
+# =============================================================================
+node_modules/
+bower_components/
+jspm_packages/
+.npm
+.yarn/
+yarn.lock
+package-lock.json
+.pnpm-store/
+.rush/
+
+# =============================================================================
+# PROFILING ET PERFORMANCE
+# =============================================================================
+.prof
+*.prof
+.benchmarks/
+profile_*
+*.trace
+
+# =============================================================================
+# SÉCURITÉ ET AUDIT
+# =============================================================================
+.security/
+security-audit/
+vulnerability-report/
+*.audit
+
+# =============================================================================
+# DIVERS
+# =============================================================================
+.DS_Store
+*.pid
+*.seed
+*.pid.lock
+.lock-wscript
+.grunt
+.sass-cache/
+.connect.lock
+.nyc_output
+.next
+out/
+.nuxt
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
