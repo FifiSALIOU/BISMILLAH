@@ -40,6 +40,7 @@ export async function askQuestionUltra(
 ): Promise<QuestionResponse> {
   const payload: QuestionPayload = {
     question,
+    provider: "mistral",
     top_k: 3,
     temperature: 0.3,
     max_tokens: 512,

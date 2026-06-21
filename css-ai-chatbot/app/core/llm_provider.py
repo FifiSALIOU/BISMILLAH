@@ -1,5 +1,6 @@
 import httpx
 import json
+import os
 from typing import Dict, Any, AsyncGenerator
 from enum import Enum
 
@@ -45,14 +46,18 @@ PROVIDER_CONFIGS = {
     }
 }
 
-# Clés API
-API_KEYS = {
-    Provider.MISTRAL: settings.MISTRAL_API_KEY,
-    Provider.OPENAI: settings.OPENAI_API_KEY,
-    Provider.ANTHROPIC: settings.ANTHROPIC_API_KEY,
-    Provider.DEEPSEEK: settings.DEEPSEEK_API_KEY,
-    Provider.GROQ: settings.GROQ_API_KEY
+_API_KEY_ENV_NAMES = {
+    Provider.MISTRAL: "MISTRAL_API_KEY",
+    Provider.OPENAI: "OPENAI_API_KEY",
+    Provider.ANTHROPIC: "ANTHROPIC_API_KEY",
+    Provider.DEEPSEEK: "DEEPSEEK_API_KEY",
+    Provider.GROQ: "GROQ_API_KEY",
 }
+
+
+def _resolve_api_key(provider: Provider) -> str:
+    env_name = _API_KEY_ENV_NAMES[provider]
+    return getattr(settings, env_name, "") or os.getenv(env_name, "")
 
 
 # Provider LLM optimisé
@@ -60,7 +65,7 @@ class OptimizedLLMProvider:
     def __init__(self, provider: Provider):
         self.provider = provider
         self.config = PROVIDER_CONFIGS[provider]
-        self.api_key = API_KEYS[provider]
+        self.api_key = _resolve_api_key(provider)
         self.client = None
 
     def get_headers(self) -> Dict[str, str]:
