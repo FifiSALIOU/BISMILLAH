@@ -1,0 +1,31 @@
+@startsalt
+{+
+{* <b>Assistant IA</b> | En ligne | [X]
+.
+{. | <b>Assistant</b>
+Bonjour ! Comment puis-je vous aider ?
+14:30
+}
+.
+.
+                           {. | <b>Utilisateur</b>
+                           Comment créer un compte sur la plateforme CSS-IPRES ?
+                           15:42
+                           }
+.
+{. | <b>Assistant</b>
+Pour créer un compte sur la plateforme CSS-IPRES, suivez ces étapes :
+1. Rendez-vous sur le site CSS-IPRES.
+2. Cliquez sur « S'inscrire ».
+3. Remplissez le formulaire.
+4. Acceptez les CGU et cochez le CAPTCHA.
+5. Un e-mail avec vos identifiants vous est envoyé.
+6. Personnalisez votre mot de passe à la première connexion.
+7. Accédez à votre espace en ligne.
+15:42
+[👍] [👎]
+}
+.
+"Tapez votre message..." | [>]
+}
+@endsalt

@@ -1,0 +1,15 @@
+@startsalt
+{
+{T-
++ Scénario | Question testée | HTTP | provider_used | model_used | context_found | search_results | ranked_results | Citations « Source n » | Résultat
++ S1 | Bonjour | 200 | predefined_qa | template_based | true | 0 | 0 | Non | Réussi
++ S2 | quel est l'âge de la retraite | 200 | predefined_qa | template_based | true | 0 | 0 | Non | Réussi
++ S3 | numéro de téléphone css | 200 | predefined_qa | template_based | true | 0 | 0 | Non | Réussi
++ S4 | Qu'est-ce que l'IPRES et comment est-elle organisée ? | 200 | mistral | mistral-medium | true | 15 | 3 | Non | Réussi
++ S5 | Comment créer un compte sur la plateforme CSS-IPRES ? | 200 | mistral | mistral-medium | true | 15 | 3 | Non | Réussi
++ S6 | Quelle est la capitale du Sénégal ? | 200 | mistral | mistral-medium | true | 15 | 3 | Non | Réussi
++ S7 | POST /record-satisfaction (response_id de S1) | 200 | — | — | — | — | — | — | Réussi
++ S8 | GET /health | 200 | — | — | — | — | — | — | Réussi
+}
+}
+@endsalt

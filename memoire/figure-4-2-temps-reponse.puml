@@ -1,0 +1,49 @@
+@startuml figure-4-2-temps-reponse
+skinparam defaultFontName Arial
+skinparam activity {
+  BackgroundColor #FEFEFF
+  BorderColor #333333
+  FontSize 11
+}
+skinparam note {
+  BackgroundColor #FFFDE7
+  BorderColor #F9A825
+}
+
+title Figure 4.2 — Temps de réponse mesurés (response_time_ms)\nEndpoint : POST /ask-question-ultra | Payload chatApi.ts : mistral, top_k=3, temperature=0.3, max_tokens=512
+
+|#E8F5E9| Chemin 1 : PredefinedQASystem |
+start
+:Scénario S1 — « Bonjour »
+**response_time_ms = 2,88 ms**
+provider_used = predefined_qa
+llm_calls_saved = true;
+:Scénario S2 — « quel est l'âge de la retraite »
+**response_time_ms = 10,09 ms**;
+:Scénario S3 — « numéro de téléphone css »
+**response_time_ms = 1,87 ms**;
+note right
+  **Profil prédéfini (S1–S3)**
+  Min : 1,87 ms | Max : 10,09 ms
+  **Moyenne : 4,9 ms**
+  search_results = 0
+  ranked_results = 0
+end note
+
+|#E3F2FD| Chemin 2 : RAG hybride + re-ranking + Mistral |
+:Scénario S6 — « Quelle est la capitale du Sénégal ? »
+**response_time_ms = 4 876,58 ms**
+search_results = 15 | ranked_results = 3;
+:Scénario S4 — « Qu'est-ce que l'IPRES… »
+**response_time_ms = 7 405,97 ms**;
+:Scénario S5 — « Comment créer un compte CSS-IPRES ? »
+**response_time_ms = 10 525,20 ms**;
+note right
+  **Profil RAG + LLM (S4–S5)**
+  Min : 7 406 ms | Max : 10 525 ms
+  **Moyenne : 8 966 ms**
+  Modèle : mistral-medium
+end note
+
+stop
+@enduml
